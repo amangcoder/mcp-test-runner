@@ -1,0 +1,39 @@
+{
+  "numTotalTests": 3,
+  "numPassedTests": 1,
+  "numFailedTests": 1,
+  "numPendingTests": 1,
+  "testResults": [
+    {
+      "testFilePath": "/project/__tests__/calculator.test.js",
+      "assertionResults": [
+        {
+          "ancestorTitles": ["Calculator"],
+          "title": "adds two numbers correctly",
+          "status": "passed",
+          "duration": 5,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": ["Calculator"],
+          "title": "subtracts numbers correctly",
+          "status": "failed",
+          "duration": 12,
+          "failureMessages": [
+            "expect(received).toBe(expected)\n\nExpected: 2\nReceived: 3\n\n  at Object.<anonymous> (/project/__tests__/calculator.test.js:10:5)"
+          ]
+        },
+        {
+          "ancestorTitles": ["Calculator"],
+          "title": "multiplies numbers (pending)",
+          "status": "pending",
+          "duration": null,
+          "failureMessages": []
+        }
+      ],
+      "perfStats": {
+        "runtime": 50
+      }
+    }
+  ]
+}

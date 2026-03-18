@@ -1,0 +1,39 @@
+{
+  "name": "@mcp-servers/test-runner",
+  "version": "0.1.0",
+  "description": "MCP server for running tests across pytest, jest, and vitest with content-hash caching",
+  "type": "module",
+  "main": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "bin": {
+    "mcp-test-runner": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "build:check": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "fast-xml-parser": ">=4.5.0",
+    "fast-glob": "^3.3.0"
+  },
+  "devDependencies": {
+    "vitest": "^2.0.0",
+    "typescript": "^5.5.0",
+    "@types/node": "^22.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "dist"
+  ]
+}

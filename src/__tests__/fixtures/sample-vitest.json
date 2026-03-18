@@ -1,0 +1,39 @@
+{
+  "numTotalTests": 3,
+  "numPassedTests": 2,
+  "numFailedTests": 1,
+  "numPendingTests": 0,
+  "testResults": [
+    {
+      "name": "/project/src/__tests__/string-utils.test.ts",
+      "assertionResults": [
+        {
+          "ancestorTitles": ["StringUtils"],
+          "title": "converts string to uppercase",
+          "status": "passed",
+          "duration": 3,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": ["StringUtils"],
+          "title": "reverses a string",
+          "status": "passed",
+          "duration": 2,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": ["StringUtils"],
+          "title": "trims leading and trailing whitespace",
+          "status": "failed",
+          "duration": 8,
+          "failureMessages": [
+            "AssertionError: expected ' hello ' to equal 'hello'\n  at /project/src/__tests__/string-utils.test.ts:15:5"
+          ]
+        }
+      ],
+      "perfStats": {
+        "runtime": 25
+      }
+    }
+  ]
+}

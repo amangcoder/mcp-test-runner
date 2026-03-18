@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Realistic pytest JUnit XML fixture for unit tests.
+
+  Contains exactly 5 testcase elements:
+    1. test_addition        — passed
+    2. test_subtraction     — failed (both message attribute AND failure text body)
+    3. test_division_by_zero— errored (<error>)
+    4. test_multiply        — skipped (<skipped/>)
+    5. test_add[1-2-3]      — passed, parameterized name with brackets
+
+  Summary (as parsed by parseJunitXml):
+    total=5, passed=2, failed=2 (failed+errored), skipped=1
+-->
+<testsuites>
+  <testsuite
+    name="test_example"
+    errors="1"
+    failures="1"
+    skipped="1"
+    tests="5"
+    time="0.038">
+
+    <!-- 1. Passed test -->
+    <testcase
+      classname="test_example.TestMath"
+      name="test_addition"
+      time="0.010"/>
+
+    <!-- 2. Failed test — BOTH @message attribute AND element text body required for AC-012 -->
+    <testcase
+      classname="test_example.TestMath"
+      name="test_subtraction"
+      time="0.015">
+      <failure message="AssertionError: assert 1 == 2">Traceback (most recent call last):
+  File "test_example.py", line 10, in test_subtraction
+    assert 1 == 2
+AssertionError: assert 1 == 2</failure>
+    </testcase>
+
+    <!-- 3. Errored test -->
+    <testcase
+      classname="test_example.TestMath"
+      name="test_division_by_zero"
+      time="0.005">
+      <error message="ZeroDivisionError: division by zero">Traceback (most recent call last):
+  File "test_example.py", line 15, in test_division_by_zero
+    result = 1 / 0
+ZeroDivisionError: division by zero</error>
+    </testcase>
+
+    <!-- 4. Skipped test -->
+    <testcase
+      classname="test_example.TestMath"
+      name="test_multiply"
+      time="0.000">
+      <skipped/>
+    </testcase>
+
+    <!-- 5. Parameterized test — name contains brackets -->
+    <testcase
+      classname="test_example.TestMath"
+      name="test_add[1-2-3]"
+      time="0.008"/>
+
+  </testsuite>
+</testsuites>
